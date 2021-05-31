@@ -1,0 +1,225 @@
+{% extends 'hospital_base.html' %}
+{% load static %}
+
+{% block title %}
+Asaanilaaj
+{% endblock title %}
+
+{%block body%}
+
+     <section id="team" class="team section">	  
+		
+		<div class="row" >
+       
+		<div class="col-sm-2" style = "padding-top:50px" >
+		<div class="card" ></br></br>
+		<center><img  src="{% static 'img/img_avatar.png' %} "  alt="Avatar" class="avatar"></center></br>
+		<div class="card-header">
+		<strong>ABC. Hospital</strong></br>		
+		</div>
+		</div>
+		</div>
+        
+		<div class="col-sm-9"></br></br>
+		<div class="card" >
+		<h5 class="card-header text-white bg-info mb-3">Todays Appointment</h5>
+		<div class="card-body">
+		<h5 class="card-title"><strong>Appointment With Dr ABC</strong>
+		<div class='buttonn' id = "myBtn" style = "float:right">
+		<a href="#" class="btn btn-primary">Check Details</a>
+		</div></h5>		
+		<p class="card-text text-danger">Today at 7 P.M</p>
+		</div>
+		<div class="card-footer text-muted">Updated 2 days ago</div>
+        </div></br>
+		
+		<div class="card" >
+		<h5 class="card-header text-white bg-dark mb-3">Weekly Appointment</h5>
+		<div class="card-body">
+		<h5 class="card-title"><strong>Appointment With Dr ABC</strong>
+		<div class='buttonn' id = "myBtn" style = "float:right">
+		<a href="#" class="btn btn-primary">Check Details</a>
+		</div></h5>
+		<p class="card-text text-danger">12/12/12 at 5 P.M</p>
+		</div><hr class="style1">
+		<div class="card-body">
+		<h5 class="card-title"><strong>Appointment With Dr ABC</strong>
+		<div class='buttonn' id = "myBtn" style = "float:right">
+		<a href="#" class="btn btn-primary">Check Details</a>
+		</div></h5>
+		<p class="card-text text-danger">11/11/11 at 5 P.M</p>
+		</div>
+		<div class="card-footer text-muted">Updated 2 days ago</div>
+        </div></br>
+		
+		</div>
+		</div>
+	  </section><!-- End Team Section -->
+	
+	
+	  
+                       
+<!--MODAL STRAT-->
+		<div id="myModal" class="modal">
+		<div class="modal-content">
+		<div style="overflow-x:auto;">
+	
+		<span class="close">&times;</span>
+	
+		<div class="table-responsive">
+		<table class="table table-hover">
+
+		<center><h4 style = "color:#1bb1dc"><strong>Patient Details</strong></h4></center>
+		
+		<tbody>
+		<tr>
+		<th>Patient Name</th>
+		<td>Miss ABC</td>
+		</tr>
+		<tr>
+		<th>Age</th>
+		<td>30 Years</td>
+		</tr>
+		<tr>
+		<th>Test</th>
+		<td>Blood Type</td>
+		</tr>
+		<tr>
+		<th>Symptoms</th>
+		<td>Fever</td>
+		</tr>
+		<tr>
+		<th>Appointment Time</th>
+		<td>7:00 P.M Today</td>
+		</tr>
+		<tr>
+		<th>Address</th>
+		<td>1E/4 Block 5</td>
+		</tr>
+		<tr>
+		<th>Contact</th>
+		<td>0301-1234567</td>
+		</tr>
+		<tr>
+		<th><a href="#" class="btn btn-danger" style = "float:left">Cancel Appointment</a></th>
+		<td><a href="#" class="btn btn-primary" style = "float:right">Confirm</a></td>	
+		</tr>
+		</tbody>
+		</table>
+		</div>
+
+		</div>
+		</div>
+		</div>	
+<!--END MODAL-->				  
+
+
+  <!--MODAL JAVASCRIPT (POPUP)-->
+  <!--START-->
+  <!--Table-->
+	<script>
+		var modal = document.getElementById("myModal");
+		var btn = document.getElementById("myBtn");
+		var span = document.getElementsByClassName("close")[0];
+
+		btn.onclick = function() {
+		modal.style.display = "block";
+		}
+
+		span.onclick = function() {
+		modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+		if (event.target == modal) {
+		modal.style.display = "none";
+		}
+		}
+
+    </script>
+  <!--END-->
+  <!--MODAL JAVASCRIPT (POPUP)-->
+  <script>
+function myFunction() {
+  alert("Do you want to add more Doctors!!");
+}
+</script>
+  <script>
+function myFunction1() {
+  alert("Do you want to add more Departments!!");
+}
+</script>
+
+<style>
+.avatar1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.avatar {
+  vertical-align: middle;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+table {
+  color:#2C3E50;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 0px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 150px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  float:right;
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+
+</style>
+
+{% endblock body%}
